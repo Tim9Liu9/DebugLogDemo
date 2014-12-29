@@ -14,6 +14,7 @@
 		0F7F84841A513FCE0089643C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F7F84831A513FCE0089643C /* Images.xcassets */; };
 		0F7F84871A513FCE0089643C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F7F84851A513FCE0089643C /* LaunchScreen.xib */; };
 		0F7F84931A513FCE0089643C /* DebugLogDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F7F84921A513FCE0089643C /* DebugLogDemoTests.m */; };
+		0F7F84A01A51400B0089643C /* UIViewController+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F7F849F1A51400B0089643C /* UIViewController+Debug.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,10 @@
 		0F7F848C1A513FCE0089643C /* DebugLogDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DebugLogDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F7F84911A513FCE0089643C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F7F84921A513FCE0089643C /* DebugLogDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DebugLogDemoTests.m; sourceTree = "<group>"; };
+		0F7F849D1A51400B0089643C /* DebugLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebugLog.h; sourceTree = "<group>"; };
+		0F7F849E1A51400B0089643C /* UIViewController+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Debug.h"; sourceTree = "<group>"; };
+		0F7F849F1A51400B0089643C /* UIViewController+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Debug.m"; sourceTree = "<group>"; };
+		0F7F84A11A5140BF0089643C /* DebugLogDemo-ph.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DebugLogDemo-ph.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +68,7 @@
 		0F7F846A1A513FCE0089643C = {
 			isa = PBXGroup;
 			children = (
+				0F7F84A11A5140BF0089643C /* DebugLogDemo-ph.pch */,
 				0F7F84751A513FCE0089643C /* DebugLogDemo */,
 				0F7F848F1A513FCE0089643C /* DebugLogDemoTests */,
 				0F7F84741A513FCE0089643C /* Products */,
@@ -81,6 +87,7 @@
 		0F7F84751A513FCE0089643C /* DebugLogDemo */ = {
 			isa = PBXGroup;
 			children = (
+				0F7F849C1A51400B0089643C /* libs */,
 				0F7F847A1A513FCE0089643C /* AppDelegate.h */,
 				0F7F847B1A513FCE0089643C /* AppDelegate.m */,
 				0F7F847D1A513FCE0089643C /* ViewController.h */,
@@ -117,6 +124,16 @@
 				0F7F84911A513FCE0089643C /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0F7F849C1A51400B0089643C /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				0F7F849D1A51400B0089643C /* DebugLog.h */,
+				0F7F849E1A51400B0089643C /* UIViewController+Debug.h */,
+				0F7F849F1A51400B0089643C /* UIViewController+Debug.m */,
+			);
+			path = libs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +238,7 @@
 			files = (
 				0F7F847F1A513FCE0089643C /* ViewController.m in Sources */,
 				0F7F847C1A513FCE0089643C /* AppDelegate.m in Sources */,
+				0F7F84A01A51400B0089643C /* UIViewController+Debug.m in Sources */,
 				0F7F84791A513FCE0089643C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,7 +315,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -333,7 +351,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -345,7 +363,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DebugLogDemo-ph.pch";
 				INFOPLIST_FILE = DebugLogDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -355,7 +376,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DebugLogDemo-ph.pch";
 				INFOPLIST_FILE = DebugLogDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

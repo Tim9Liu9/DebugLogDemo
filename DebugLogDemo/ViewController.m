@@ -14,14 +14,30 @@
 
 @implementation ViewController
 
+// 对于此viewDidLoad方法，已经在"UIViewController+Debug.m",写了方法进行拦截了。
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    [self test];
+    [self viewDidLoad:@""];
+}
+
+- (void) test
+{
+    MyLog(@"--->");
+    
+}
+
+
+
+- (void)viewDidLoad: (NSString *)str
+{
+    NSLog(@"viewDidLoad: (NSString *)str-->");
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 
 @end
